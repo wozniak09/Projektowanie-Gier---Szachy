@@ -1,17 +1,21 @@
 package projektowanie.gier.szachy;
 
-import javax.swing.*;
-import java.applet.*;
 import java.awt.*;
-public class ProjektowanieGierSzachy extends Applet
+
+import javax.swing.*;
+public class CheckerProgram 
 {
 	public static int rows = 8;
 	public static int columns = 8;
-	public static Color col1 = Color.BLACK;
-	public static Color col2 = Color.RED;
-	public void init()
+	public static Color col1 = Color.BLUE;
+	public static Color col2 = Color.WHITE;
+	public static void main(String[] args) 
 	{
-		setLayout(new GridLayout(rows, columns));
+		JFrame checkerBoard = new JFrame();
+		checkerBoard.setSize(600, 600);
+		checkerBoard.setTitle("Szachownica");
+		Container pane = checkerBoard.getContentPane();
+		pane.setLayout(new GridLayout(rows, columns));
 		Color temp;
 		for (int i = 0; i < rows; i++)
 		{
@@ -35,8 +39,11 @@ public class ProjektowanieGierSzachy extends Applet
 				{
 					temp = col1;
 				}
-				add(panel);
+				pane.add(panel);
 			}
 		}
+		checkerBoard.setVisible(true);
 	}
+
 }
+
